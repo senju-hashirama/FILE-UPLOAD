@@ -91,7 +91,7 @@ def login_user():
     user_name=request.form.get("user_name")
     passwd=request.form.get("passwd")
 
-    if (user_name=="admin")and(passwd=="anton@072003"):
+    if (user_name=="admin")and(passwd=="anton"):#default login creds
         app.config["user"]="admin"
         return redirect("/")
     else:
