@@ -1,0 +1,16 @@
+{%extends "index.html"%}
+
+{%block title%}
+Home
+{%endblock%}
+
+{%block body%}
+
+<div style="margin-bottom:2px">
+  <h1 style="color:white;text-align:center;margin-top:20px"> This is ANTON's Upload Server </h1>
+</div>
+<img style="display:block;  margin-left:auto;margin-right:auto;with:50%"src="{{url_for('static',filename='pirate-red-beard.gif')}}" alt="">
+
+
+<a href="/upload"><button type="button" style="margin:auto;display:block;box-shadow: 7px 7px 10px purple" class="btn btn-outline-light btn-lg">Upload</button></a>
+{%endblock%}

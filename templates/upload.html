@@ -1,0 +1,100 @@
+{%extends "index.html"%}
+
+{%block title%}Upload{%endblock%}
+
+{%block head1%}
+
+<style>
+  .form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 500px;
+    height: 350px;
+
+    margin-top: 5px;
+    padding-top: 20px;
+
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    background: #800080;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.199);
+  }
+</style>
+
+{%endblock%}
+
+{%block body%}
+<div class="lol">
+
+  <form style="
+  color:black;
+  position: absolute;
+  top: 50%;
+    left: 50%;
+    transform: translate(-49%, -49%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 300px;
+    height: 350px;
+
+    margin-top: 5px;
+    padding: 20px;
+
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    background: white;
+    box-shadow: 7px 7px 10px purple" action="/upload_file" method="POST" enctype="multipart/form-data">
+    <h1 style="; margin-top:0;margin-bottom: 15px ;color:black;font-weight:1000;">Upload</h1>
+
+
+        <div class="mb-3"  >
+          <label for="type" class="form-label" style="color:black; font-weight: bold;margin:5px">Type</label>
+
+          <select  name="type">
+            <option value="movie">Movie</option>
+            <option value="series">Series</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="file" class="form-label" style="color:black; font-weight: bold;margin:5px">File</label>
+          <input type=file name=file>
+        </div>
+
+        <div class ="mb-3" style="text-align:center"><button type="submit" class="btn btn-dark" style="border-color:black;background-color:#white; border: none;">Upload</button></div>
+
+      </form>
+    </div>
+
+    {% with messages = get_flashed_messages() %}
+     {% if messages %}
+
+     <div class="alert alert-success alert-dismissible fade show" role="alert">
+
+       {% for message in messages %}
+        {{ message }}
+       {% endfor %}
+
+ <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+     </div>
+
+
+
+    {% endif %}
+   {% endwith %}
+
+
+
+{%endblock%}
